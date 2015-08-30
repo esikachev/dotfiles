@@ -14,6 +14,8 @@ Plugin 'gmarik/Vundle.vim'              " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree'            " A tree explorer plugin for vim
 Plugin 'Shougo/unite.vim'               " Navigation between buffers and files
 Plugin 'majutsushi/tagbar'              " Class/module browser
+Plugin 'tasklist.vim'
+Plugin 'kien/ctrlp.vim'
 
 "------------------=== Other ===----------------------
 Plugin 'bling/vim-airline'              " lean & mean status/tabline for vim that's light as air
@@ -195,7 +197,7 @@ let g:syntastic_warning_symbol = 'x'
 let g:syntastic_style_warning_symbol = 'x'
 
 " Vim-Airline
-let g:airline_theme='powerlineish'
+let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -250,9 +252,35 @@ let g:pymode_run = 0
 " Other options
 let g:pymode_options_colorcolumn = 0
 set guifont=Sauce\ Code\ Powerline\ Medium
+let g:airline#extensions#tabline#enabled = 1
 " air-line
 let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = "fancy"
+let g:Powerline_symbols = "\ua0"
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+
+  " unicode symbols
+  let g:airline_left_sep = '»'
+  let g:airline_left_sep = '▶'
+  let g:airline_right_sep = '«'
+  let g:airline_right_sep = '◀'
+  let g:airline_symbols.crypt = '🔒'
+  let g:airline_symbols.linenr = '␊'
+  let g:airline_symbols.linenr = '␤'
+  let g:airline_symbols.linenr = '¶'
+  let g:airline_symbols.branch = '⎇'
+  let g:airline_symbols.paste = 'ρ'
+  let g:airline_symbols.paste = 'Þ'
+  let g:airline_symbols.paste = '∥'
+  let g:airline_symbols.whitespace = 'Ξ'
+
+  " powerline symbols
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+
 "=====================================================
 " User hotkeys
 "=====================================================
